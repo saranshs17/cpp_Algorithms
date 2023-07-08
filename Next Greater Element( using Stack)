@@ -1,0 +1,46 @@
+#include<bits/stdc++.h>
+#define tstart auto start = high_resolution_clock::now();
+#define tstop auto stop = high_resolution_clock::now();
+#define tduration auto duration = duration_cast<microseconds>(stop - start);
+#define tprint cout << "Time taken by function: "<< duration.count()<< " microseconds" << endl;
+#define sped ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL); 
+#define ln '\n'
+#define ll long long
+#define f first
+#define s second
+#define loop(n) for(int i=0;i<n;++i)
+using namespace std;
+using namespace std::chrono;
+const long long M=1e9+7;
+
+//<---------------------------code begins--------------------------->
+
+vector<int> NGE(vector<int> v){
+    vector<int> nge(v.size());
+    stack<int>st;
+    loop(v.size()){
+        while(!st.empty()&&v[i]>v[st.top()]){
+            nge[st.top()]=i;
+            st.pop();
+        }
+        st.push(i);
+    }
+    while(!st.empty()){
+        nge[st.top()]=-1;
+        st.pop();
+    }
+    return nge;
+}
+int32_t main(){
+    sped
+    int n;
+    cin>>n;
+    vector<int> v(n);
+    loop(n){
+        cin>>v[i];
+    }
+    vector<int>nge=NGE(v);
+    loop(n){
+        cout<<v[i]<<" "<<(nge[i]==-1?-1:v[nge[i]])<<ln;
+    }
+}
