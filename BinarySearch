@@ -11,7 +11,7 @@
     int lo=0,hi=n-1,mid;
     while(hi>=lo)
     {
-        mid=lo+(hi-lo)/2;
+        mid=lo+(hi-lo)/2; // or (hi+lo) >> 1;
         if(arr[mid]>=search)
         {
             ans=mid;
