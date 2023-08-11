@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+#define sped ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL); 
+#define ln '\n'
+#define ll long long
+#define f first
+#define s second
+#define loop(n) for(unsigned int i=0; i<n; ++i)
+using namespace std;
+const long long M=1e9+7;
+const int N = 1e7+10;
+vector<bool> isPrime(N,1);
+//<---------------------------code begins--------------------------->
+void sieve(){
+	isPrime[0] = isPrime[1] = false;
+    for(int i=2;i<N;++i){
+    	if(isPrime[i]==true){
+    		for(int j=2*i;j<N;j+=i){
+    			isPrime[j]=false;
+    		}
+    	}
+    }
+}
+int32_t main(){
+    sped
+    sieve();
+    int n;
+    cin>>n;
+    for(int i=0;i<=n;++i){
+    	if(isPrime[i]==1)
+    	cout<<i<<ln;
+    }
+}
