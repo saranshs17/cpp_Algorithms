@@ -1,0 +1,42 @@
+#include<bits/stdc++.h>
+#define sped ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL); 
+#define ln '\n'
+#define ll long long
+#define f first
+#define s second
+#define loop(n) for(int i=0; i<n; ++i)
+using namespace std;
+const long long M=1e9+7;
+const int N = 1000000;
+vector<bool> isPrime(N+1,1);
+
+//<---------------------------code begins--------------------------->
+
+int32_t main(){
+    sped
+    int t;
+    cin>>t;
+    vector<int> masks;
+    int cases=t;
+    while(t--){
+    	int n;
+    	cin>>n;
+    	int mask=0;
+    	loop(n){
+    		int day;
+    		cin>>day;
+    		mask=(mask | (1<<day));
+    	}
+    	masks.push_back(mask);
+    }
+    int max_common=INT_MIN;
+    loop(cases){
+    	for(int j=i+1;j<cases;++j){
+    		int intersection=(masks[i] & masks[j]);
+    		int common_days = __builtin_popcount(intersection);
+    		max_common=max(max_common,common_days);
+    	}
+    }
+    
+    cout<<max_common<<ln;
+}
