@@ -11,7 +11,7 @@ vector<bool> isPrime(N+1,1);
 //<---------------------------code begins--------------------------->
 vector<vector<int>> subsets(vector<int> &nums){
 	int n = nums.size();
-	int subset_ct=(1<<n);
+	int subset_ct=(1<<n);  // 2^n
 	vector<vector<int> > subsets;
 	for(int mask = 0;mask <subset_ct;++mask){
 		vector<int> subset;
