@@ -36,6 +36,7 @@ if(freq>best_freq){best_freq = freq; best_char = 'a'+char_id;}}
 cout<<best_char<<ln;
 }
 
+-->Difference Array Technique 
 // Ex-3 : Need to increase all elements of the array at indices L..R by +x.
 // Link-> https://www.hackerrank.com/challenges/crush/problem
 // Solution:
