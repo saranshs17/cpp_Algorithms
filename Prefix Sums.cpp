@@ -37,17 +37,22 @@ cout<<best_char<<ln;
 }
 
 // Ex-3 : Need to increase all elements of the array at indices L..R by +x.
-// Link(similar)-> https://www.hackerrank.com/challenges/crush/problem
+// Link-> https://www.hackerrank.com/challenges/crush/problem
 // Solution:
-int n; cin >>n; 
-vector<int> a(n); loop(n){cin>>a[i];};
-vector<int> pref(n+1);
-int q; cin>>q;
-loop(q){
-int L,R,data=0;  // 1-based
-cin>>L>>R>>data;
-pref[L-1]+=data; 
-pref[R]-=data;
-}
-rep(i,1,n+1){pref[i]+=pref[i-1];}; 
-loop(n){cout<<a[i]+pref[i]<<" ";};
+int n,q;
+    cin>>n>>q;
+    vector<int> pref(n+1); // array of zeros
+    // precomputation
+    loop(q){
+    	int a,b;
+    	cin>>a>>b;
+    	int data;
+    	cin>>data;
+    	
+    	pref[a-1]+=data;  // 1 based
+    	pref[b]-=data;
+    }
+    rep(i,1,n+1){
+    	pref[i]+=pref[i-1];
+    }
+    cout<<*max_element(pref.begin(),pref.end());
