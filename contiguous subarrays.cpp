@@ -3,7 +3,7 @@
 // URL: https://www.hackerrank.com/challenges/sansa-and-xor/problem
 // Memory Limit: 512 MB
 // Time Limit: 4000 ms
-//
+// 
 // Powered by CP Editor (https://cpeditor.org)
 
 #include <bits/stdc++.h>
