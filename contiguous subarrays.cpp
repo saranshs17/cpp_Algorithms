@@ -81,7 +81,7 @@ int32_t main() {
     int ans = 0;
 
     for (int i = 0; i < n; i++) {
-      int ct = (i + 1) * (n - i);
+      int ct = (i + 1) * (n - i);   // count of occurence of ith element in subarrays
       if (ct % 2) ans = (ans ^ a[i]);
     }
 
