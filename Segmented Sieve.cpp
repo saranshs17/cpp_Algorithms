@@ -62,6 +62,8 @@ for (int i = 2; i * i <= N; i++) {if (isprime[i]) {for (int j = i * i; j <= N; j
 vector<int>  segmented_sieve(int l,int r){
 //  1 base indexing
 // tc: O((r-l+1)loglog(r))
+//segment of size : r-l+1
+// condition : r-l+1<=1e5
 // all prime numbers in range [l,r] including 0,1 so always start loop from 2 or make condition for 0,1
     int lim=sqrt(r)+1;
     vector<bool> isPrime(lim+1,true);
