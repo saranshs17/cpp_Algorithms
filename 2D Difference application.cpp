@@ -121,7 +121,7 @@ int32_t main() {
       cin >> str;
       for (int j = 1; j <= m; ++j) {
         arr[i][j] = str[j - 1] - '0';
-        pre[i][j] = 0;
+        pre[i][j] = 0;    // setting all values to 0 
       }
     }
     int q;
@@ -129,7 +129,7 @@ int32_t main() {
     while (q--) {
       int a, b, c, d;
       cin >> a >> b >> c >> d;
-      pre[a][b]++;
+      pre[a][b]++;                                    // 2-d diff array ended
       if (c + 1 <= n && d + 1 <= m) {
         pre[c + 1][d + 1]++;
       }
@@ -139,15 +139,15 @@ int32_t main() {
       if (c + 1 <= n) {
         pre[c + 1][b]--;
       }
-    }
+    }                                                 // 2-d diff array ended
     for (int i = 1; i <= n; ++i) {
       for (int j = 2; j <= m; ++j) {
-        pre[i][j] += pre[i][j - 1];
+        pre[i][j] += pre[i][j - 1];                   // performing range sum horizontally
       }
     }
     for (int i = 1; i <= m; ++i) {
       for (int j = 2; j <= n; ++j) {
-        pre[j][i] += pre[j - 1][i];
+        pre[j][i] += pre[j - 1][i];                   // performing range sum vertically
       }
     }
     for (int i = 1; i <= n; ++i) {
