@@ -3,7 +3,7 @@ using namespace std;
 string t;
 vector<int> manacher_odd(string s) {
     int n = s.size();
-    s = "$" + s + "^";
+    s = "$" + s + "^"; 
     vector<int> p(n + 2);
     int l = 1, r = 1;
     for(int i = 1; i <= n; i++) {
