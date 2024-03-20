@@ -3,17 +3,17 @@ using namespace std;
 vector<int> kmp(string s) 
 {
     int n = s.size();
-    vector<int> pi(n, 0);
+    vector<int> pie(n, 0);
     for (int i = 1; i < n; i++) {
-        int j = pi[i - 1];
+        int j = pie[i - 1];
         while (s[i] != s[j] && j > 0){
-            j = pi[j - 1];
+            j = pie[j - 1];
         }
         if (s[i] == s[j])
             j++;
-        pi[i] = j;
+        pie[i] = j;
     }
-    return pi;
+    return pie;
 }
 
 
