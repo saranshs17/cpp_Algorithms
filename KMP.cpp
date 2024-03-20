@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-vector<int> kmp(string s)
+vector<int> kmp(string s) 
 {
     int n = s.size();
     vector<int> pi(n, 0);
